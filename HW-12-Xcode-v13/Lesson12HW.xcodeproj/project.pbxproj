@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AB423822BE26B6700ED8177 /* PlaylistMoveDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4715622BBC2D7700759142 /* PlaylistMoveDeleteViewController.swift */; };
 		CE4715042BBAC38F00759142 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4715032BBAC38F00759142 /* AppDelegate.swift */; };
 		CE4715062BBAC38F00759142 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4715052BBAC38F00759142 /* SceneDelegate.swift */; };
 		CE47150B2BBAC38F00759142 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4715092BBAC38F00759142 /* Main.storyboard */; };
@@ -30,7 +31,6 @@
 		CE47155C2BBC26A300759142 /* PlaylistDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47155B2BBC26A300759142 /* PlaylistDeleteViewController.swift */; };
 		CE47155E2BBC26AB00759142 /* PlaylistDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47155D2BBC26AB00759142 /* PlaylistDeleteModel.swift */; };
 		CE4715602BBC26B200759142 /* PlaylistDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47155F2BBC26B200759142 /* PlaylistDeleteView.swift */; };
-		CE4715632BBC2D7700759142 /* PlaylistMoveDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4715622BBC2D7700759142 /* PlaylistMoveDeleteViewController.swift */; };
 		CE4715652BBC2D8000759142 /* PlaylistMoveDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4715642BBC2D8000759142 /* PlaylistMoveDeleteModel.swift */; };
 		CE4715672BBC2D8C00759142 /* PlaylistMoveDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4715662BBC2D8C00759142 /* PlaylistMoveDeleteView.swift */; };
 		CE47156A2BBC304F00759142 /* PlaylistByGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4715692BBC304F00759142 /* PlaylistByGenreViewController.swift */; };
@@ -377,11 +377,11 @@
 				CE4715672BBC2D8C00759142 /* PlaylistMoveDeleteView.swift in Sources */,
 				CE4715442BBB0CEC00759142 /* MainPlaylistView.swift in Sources */,
 				CE4715752BBC31D800759142 /* PlaylistModesView.swift in Sources */,
+				0AB423822BE26B6700ED8177 /* PlaylistMoveDeleteViewController.swift in Sources */,
 				CE4715212BBADC7800759142 /* InitialViewController.swift in Sources */,
 				CE47155C2BBC26A300759142 /* PlaylistDeleteViewController.swift in Sources */,
 				CE4715732BBC31D000759142 /* PlaylistModesModel.swift in Sources */,
 				CE4715302BBAE14E00759142 /* UIViewController+Storyboard.swift in Sources */,
-				CE4715632BBC2D7700759142 /* PlaylistMoveDeleteViewController.swift in Sources */,
 				CE47153A2BBB074C00759142 /* DataLoaderService.swift in Sources */,
 				CE4715042BBAC38F00759142 /* AppDelegate.swift in Sources */,
 				CE4715332BBAFBF100759142 /* TaskItem.swift in Sources */,
@@ -556,6 +556,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -584,6 +585,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

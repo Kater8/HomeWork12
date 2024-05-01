@@ -8,6 +8,9 @@
 import UIKit
 
 class MainPlaylistViewController: UIViewController {
+    // додала tableView mainPlaylistCell
+    @IBOutlet weak var tableView: UITableView!
+ 
     
     @IBOutlet weak var contentView: MainPlaylistView!
     var model: MainPlaylistModel!
@@ -36,9 +39,7 @@ extension MainPlaylistViewController: MainPlaylistModelDelegate {
         contentView.tableView.reloadData()
     }
 }
-
 extension MainPlaylistViewController: MainPlaylistViewDelegate {
-    
 }
 
 extension MainPlaylistViewController: UITableViewDataSource {
@@ -66,3 +67,5 @@ extension MainPlaylistViewController: UITableViewDelegate {
         
     }
 }
+
+
