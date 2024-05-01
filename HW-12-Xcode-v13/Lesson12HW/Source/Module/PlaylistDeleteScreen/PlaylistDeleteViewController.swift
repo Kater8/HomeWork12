@@ -53,7 +53,6 @@ extension PlaylistDeleteViewController: UITableViewDataSource {
         }
 
         cell.textLabel?.text = model.items[indexPath.row].songTitle
-
         return cell
     }
 }

@@ -7,9 +7,7 @@
 
 import UIKit
 
-class PlaylistMoveDeleteViewController: UIViewController {
-    
-  
+class PlaylistMoveDeleteViewController: UIViewController, PlaylistMoveDeleteModelDelegate {
     
     @IBOutlet weak var contentView: PlaylistMoveDeleteView!
     var model: PlaylistMoveDeleteModel!
@@ -22,12 +20,26 @@ class PlaylistMoveDeleteViewController: UIViewController {
     private func setupInitialState() {
         
         model = PlaylistMoveDeleteModel()
+        model.delegate = self
+        model.loadData()
+
+        contentView.tableView.delegate = self
         contentView.tableView.dataSource = self
-        contentView.tableView.dataSource = self
-        
+        contentView.tableView.dragDelegate = self
+        contentView.tableView.dragInteractionEnabled = true
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .edit,
+            target: self,
+            action: #selector(editButtonTapped(_:))
+        )
     }
     
-    @IBAction func editButtonTapped(_ sender: UIButton) {
+    func dataDidLoad() {
+        contentView.tableView.reloadData()
+    }
+    
+    @objc func editButtonTapped(_ sender: UIBarButtonItem) {
         contentView.tableView.isEditing = !contentView.tableView.isEditing
     }
     
@@ -64,5 +76,18 @@ extension PlaylistMoveDeleteViewController: UITableViewDelegate {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        // Update the model
+        let mover = model.playlist.remove(at: sourceIndexPath.row)
+        model.playlist.insert(mover, at: destinationIndexPath.row)
+    }
 }
 
+extension PlaylistMoveDeleteViewController: UITableViewDragDelegate {
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let dragItem = UIDragItem(itemProvider: NSItemProvider())
+        dragItem.localObject = model.playlist[indexPath.row]
+        return [dragItem]
+    }
+}
