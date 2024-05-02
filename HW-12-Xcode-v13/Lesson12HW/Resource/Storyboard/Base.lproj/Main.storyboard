@@ -414,6 +414,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="He3-Cv-6eq" id="jVT-FH-qQa"/>
+                        <outlet property="tableView" destination="XXi-fZ-Vt2" id="b5b-7A-xsG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqC-Lr-VaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -485,6 +486,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="Oad-nZ-CZW" id="WdF-fj-Sx5"/>
+                        <outlet property="tableView" destination="9gU-zX-Vq8" id="LTy-sK-bfk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lc4-Kf-CDW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

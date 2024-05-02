@@ -55,4 +55,13 @@ extension PlaylistDeleteViewController: UITableViewDataSource {
         cell.textLabel?.text = model.items[indexPath.row].songTitle
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Видалення пісні
+        if editingStyle == .delete {
+            model.items.remove(at: indexPath.row)
+            // Видалення рядка
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+}
 }
