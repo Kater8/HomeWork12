@@ -18,6 +18,7 @@ class PlaylistModesViewController: UIViewController, PlaylistModesViewDelegate {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl)
+    
     switch sender.selectedSegmentIndex {
     case 0:
 //        Відображення всього списку

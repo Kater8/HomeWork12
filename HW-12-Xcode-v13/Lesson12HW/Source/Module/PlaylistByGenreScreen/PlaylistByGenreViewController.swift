@@ -41,16 +41,16 @@ extension PlaylistByGenreViewController: UITableViewDataSource {
 //    Ця функція повертає кількість секцій у таблиці. викликає метод numberOfSections() у моделі, який повинен повертати кількість різних жанрів
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return model.numberOfSegments()
+        return model.numberOfSections()
         
     }
 //    повертає заголовок для кожної секції у таблиці. повертає назву жанру для даної секції.
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return model.numberOfRows(inSection: section)
+        return model.titleForHeaderInSection(section)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.numberOfRows(inSection: section)
+        return model.numberOfRowsInSection(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,11 +61,8 @@ extension PlaylistByGenreViewController: UITableViewDataSource {
 //            assertionFailure()
             return UITableViewCell()
         }
-        cell.textLabel?.text = model.items[indexPath.row].songTitle
+        cell.textLabel?.text = model.titleForRowAtIndexPath(indexPath)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.items.count
-    }
 }
