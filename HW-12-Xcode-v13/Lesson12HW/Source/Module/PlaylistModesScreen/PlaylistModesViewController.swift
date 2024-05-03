@@ -17,20 +17,21 @@ class PlaylistModesViewController: UIViewController, PlaylistModesViewDelegate {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl)
-    
-    switch sender.selectedSegmentIndex {
-    case 0:
-//        Відображення всього списку
-        model.mode = .all
-    case 1:
-//        згрупованого за жанрами
-        model.mode = .genre
-    case 2:
-//        згрупованого за авторами
-        model.mode = .author
-    default:
-        break
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            //        Відображення всього списку
+            model.mode = .all
+        case 1:
+            //        згрупованого за жанрами
+            model.mode = .genre
+        case 2:
+            //        згрупованого за авторами
+            model.mode = .author
+        default:
+            break
+        }
     }
     
     override func viewDidLoad() {
@@ -52,6 +53,9 @@ class PlaylistModesViewController: UIViewController, PlaylistModesViewDelegate {
 }
 
 extension PlaylistModesViewController: PlaylistModesModelDelegate  {
+    func modeDidChange() {
+        contentView.tableView.reloadData()
+    }
     
     func dataDidLoad() {
         contentView.tableView.reloadData()
@@ -61,7 +65,17 @@ extension PlaylistModesViewController: PlaylistModesModelDelegate  {
 extension PlaylistModesViewController : UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.items.count
+        return model.numberOfRowsInSection(section)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return model.numberOfSections()
+        
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return model.titleForHeaderInSection(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,8 +86,8 @@ extension PlaylistModesViewController : UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.textLabel[indexPath.row].songTitle
-        
+        cell.textLabel?.text = model.titleForRowAtIndexPath(indexPath)
+    
         return cell
     }
 }
